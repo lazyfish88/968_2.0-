@@ -1,0 +1,110 @@
+﻿using Ac968.SystemModuleSetMeal.Model;
+using Ac968.SystemModuleSetMeal.Utility;
+using System;
+using System.Collections.Generic;
+
+public partial class Master_V2 : System.Web.UI.Page
+{
+    protected V_CompanyModule[] __list;
+    protected SystemModule[] __AllList;
+    protected CompanyFastModule[] __FastModule;
+    protected List<SystemModule> __OpenModule_1 = new List<SystemModule>();
+    protected List<SystemModule> __OpenModule_2 = new List<SystemModule>();
+    protected List<SystemModule> __OpenModule_3 = new List<SystemModule>();
+    protected List<SystemModule> __NotOpenModule_1 = new List<SystemModule>();
+    protected List<SystemModule> __NotOpenModule_2 = new List<SystemModule>();
+    protected List<SystemModule> __NotOpenModule_3 = new List<SystemModule>();
+    protected Service_OEMAgent.PlanAgent __OEMInfo;
+    protected Service_Company.Company __Company = new Service_Company.Company();
+    protected string __companyModuleIds = ",";
+    /// <summary>
+    /// 当前登陆企业ID
+    /// </summary>
+    protected long LoginCompanyId
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(System.Configuration.ConfigurationSettings.AppSettings.Get("CompanyId")))
+            {
+                return Convert.ToInt64(System.Configuration.ConfigurationSettings.AppSettings.Get("CompanyId"));
+            }
+            return Convert.ToInt64(CookiesUtil.GetCookiesValue_V2("Camel", "CenterComId"));
+        }
+    }
+    /// <summary>
+    /// 当前登陆企业ID
+    /// </summary>
+    protected long LoginUserId
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(System.Configuration.ConfigurationSettings.AppSettings.Get("UserId")))
+            {
+                return Convert.ToInt64(System.Configuration.ConfigurationSettings.AppSettings.Get("UserId"));
+            }
+            return Convert.ToInt64(CookiesUtil.GetCookiesValue_V2("Camel", "FrameUserId"));
+        }
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Service_CompanyFastModule.CompanyFastModuleClient fastModuleBll = new Service_CompanyFastModule.CompanyFastModuleClient();
+        __FastModule = fastModuleBll.List(LoginCompanyId);
+        fastModuleBll.Abort();
+        fastModuleBll.Close();
+        Service_OEMAgent.AgentServiceClient oemBll = new Service_OEMAgent.AgentServiceClient();
+        __OEMInfo = oemBll.AgentGetByComId(LoginCompanyId);
+        Service_SystemModule.SystemModuleClient systemModuleBll = new Service_SystemModule.SystemModuleClient();
+        __AllList = systemModuleBll.ListByCompany(LoginCompanyId, "", LoginUserId);
+        systemModuleBll.Abort();
+        systemModuleBll.Close();
+        Service_Company.CompanyServiceClient companyBll = new Service_Company.CompanyServiceClient();
+        __Company = companyBll.GetCompany(LoginCompanyId);
+        companyBll.Abort();
+        companyBll.Close();
+
+        foreach (SystemModule item in __AllList)
+        {
+            if (item.State==3)
+            {
+                continue;
+            }
+
+            if (item.State==0)
+            {
+                switch (item.Type)
+                {
+                    case 1:
+                        __OpenModule_1.Add(item);
+                        break;
+                    case 2:
+                        __OpenModule_2.Add(item);
+                        break;
+                    case 3:
+                        __OpenModule_3.Add(item);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                switch (item.Type)
+                {
+                    case 1:
+                        __NotOpenModule_1.Add(item);
+                        break;
+                    case 2:
+                        __NotOpenModule_2.Add(item);
+                        break;
+                    case 3:
+                        __NotOpenModule_3.Add(item);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        oemBll.Abort();
+        oemBll.Close();
+    }
+}

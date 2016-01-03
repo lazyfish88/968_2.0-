@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c83d6ef6-c93f-4e92-8af9-66518230b1ce" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54028/PlanAgentOrder.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PlanAgentOrder.disco" MetadataType="Disco" ID="991a2749-dc49-4431-ad3c-8f619f1a6ecd" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentOrder.svc?disco" />
+    <MetadataFile FileName="PlanAgentOrder.xsd" MetadataType="Schema" ID="95847c49-7b89-43de-b58e-6e0fddcb95d2" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentOrder.svc?xsd=xsd1" />
+    <MetadataFile FileName="PlanAgentOrderBLL.wsdl" MetadataType="Wsdl" ID="e4707e5b-2b1c-483b-b070-0c5358d1b7c0" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentOrder.svc?wsdl" />
+    <MetadataFile FileName="PlanAgentOrder1.xsd" MetadataType="Schema" ID="8a8d77d0-abfe-44e1-8638-58da4b2e781b" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentOrder.svc?xsd=xsd2" />
+    <MetadataFile FileName="PlanAgentOrder2.xsd" MetadataType="Schema" ID="01089e61-9b11-4bf1-a44f-f4647d4833b4" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentOrder.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

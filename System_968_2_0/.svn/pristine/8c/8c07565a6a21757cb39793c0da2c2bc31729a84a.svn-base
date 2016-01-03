@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CompanyService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ICompanyService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ICompanyService_InsertRecePay_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <oletx:OleTxAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:oletx="http://schemas.microsoft.com/ws/2006/02/tx/oletx" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy">
+        </oletx:OleTxAssertion>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ICompanyService_InsertCash_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <oletx:OleTxAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:oletx="http://schemas.microsoft.com/ws/2006/02/tx/oletx" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy">
+        </oletx:OleTxAssertion>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Camel.ApiModel" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Camel.ORM" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICompanyService_GetCompanyCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyCount" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyUpdateBase_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUpdateBase" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyUpdateBase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUpdateBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyListByIdArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyListByIdArr" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyListByIdArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyListByIdArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyByUserId" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyUpdateCommission_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUpdateCommission" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyUpdateCommission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUpdateCommissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyByDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyByDomain" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyByDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyByDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertAgentCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAgentCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertAgentCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAgentCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyGetByWeiXin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyGetByWeiXin" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyGetByWeiXin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyGetByWeiXinResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyBindWeiXin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyBindWeiXin" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyBindWeiXin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyBindWeiXinResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyValid" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CompanyValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertRecePay_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRecePay" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertRecePay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRecePayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertCash_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCash" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertCash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCashResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SubmitServ_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitServ" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SubmitServ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitServResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserServ_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserServ" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserServ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserServResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateUserServ_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserServ" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateUserServ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserServResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SetServSucc_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetServSucc" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SetServSucc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetServSuccResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ReturnServ_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnServ" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ReturnServ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnServResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserServList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserServList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserServList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserServListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UserServValidList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserServValidList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UserServValidList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserServValidListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserAllServList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAllServList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserAllServList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAllServListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServTypeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServTypeList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServTypeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServRecCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServRecCount" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServRecCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServRecCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServType" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetServType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ServTypeUpdateAndSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServTypeUpdateAndSave" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ServTypeUpdateAndSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServTypeUpdateAndSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysServList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysServListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServRecCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysServRecCount" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServRecCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysServRecCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysServInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysServInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysServUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysServUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysServDelete" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SysServDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysServDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvSubmit_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvSubmit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvSubmit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvGetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvGetById" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvGetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvGetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvGet" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvSetValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvSetValid" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvSetValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvSetValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvSetUnValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvSetUnValid" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvSetUnValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvSetUnValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvGetList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvGetRecordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvGetRecordCount" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvGetRecordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvGetRecordCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvProc_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvProc" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvProc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvProcResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvPlan" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PointsConvPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointsConvPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerSubmit_InputMessage">
+    <wsdl:part name="parameters" element="tns:PowerSubmit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerSubmit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowerSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:PowerGet" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowerGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerIsValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:PowerIsValid" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerIsValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowerIsValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerGetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:PowerGetById" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerGetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowerGetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerProcById_InputMessage">
+    <wsdl:part name="parameters" element="tns:PowerProcById" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerProcById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowerProcByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PowerGetList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowerGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerGetRecCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:PowerGetRecCount" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PowerGetRecCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowerGetRecCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ComanyAdminGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComanyAdminGet" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ComanyAdminGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComanyAdminGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PlanUrlGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlanUrlGetList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PlanUrlGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlanUrlGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PlanUrlGetRec_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlanUrlGetRec" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PlanUrlGetRec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlanUrlGetRecResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PlanUrlTypeGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlanUrlTypeGetList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_PlanUrlTypeGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlanUrlTypeGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ComNewsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComNewsList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ComNewsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComNewsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ComNewsRecCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComNewsRecCount" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_ComNewsRecCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComNewsRecCountResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="ICompanyService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCompanyCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyCount" message="tns:ICompanyService_GetCompanyCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyCountResponse" message="tns:ICompanyService_GetCompanyCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CompanyUpdateBase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CompanyUpdateBase" message="tns:ICompanyService_CompanyUpdateBase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CompanyUpdateBaseResponse" message="tns:ICompanyService_CompanyUpdateBase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCompanyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyList" message="tns:ICompanyService_GetCompanyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyListResponse" message="tns:ICompanyService_GetCompanyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompany" message="tns:ICompanyService_GetCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyResponse" message="tns:ICompanyService_GetCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCompanyListByIdArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyListByIdArr" message="tns:ICompanyService_GetCompanyListByIdArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyListByIdArrResponse" message="tns:ICompanyService_GetCompanyListByIdArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCompanyByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyByUserId" message="tns:ICompanyService_GetCompanyByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyByUserIdResponse" message="tns:ICompanyService_GetCompanyByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CompanyUpdateCommission">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CompanyUpdateCommission" message="tns:ICompanyService_CompanyUpdateCommission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CompanyUpdateCommissionResponse" message="tns:ICompanyService_CompanyUpdateCommission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCompanyByDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyByDomain" message="tns:ICompanyService_GetCompanyByDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyByDomainResponse" message="tns:ICompanyService_GetCompanyByDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertCompany" message="tns:ICompanyService_InsertCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertCompanyResponse" message="tns:ICompanyService_InsertCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertAgentCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertAgentCompany" message="tns:ICompanyService_InsertAgentCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertAgentCompanyResponse" message="tns:ICompanyService_InsertAgentCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CompanyGetByWeiXin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CompanyGetByWeiXin" message="tns:ICompanyService_CompanyGetByWeiXin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CompanyGetByWeiXinResponse" message="tns:ICompanyService_CompanyGetByWeiXin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CompanyBindWeiXin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CompanyBindWeiXin" message="tns:ICompanyService_CompanyBindWeiXin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CompanyBindWeiXinResponse" message="tns:ICompanyService_CompanyBindWeiXin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CompanyValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CompanyValid" message="tns:ICompanyService_CompanyValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CompanyValidResponse" message="tns:ICompanyService_CompanyValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertRecePay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertRecePay" message="tns:ICompanyService_InsertRecePay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertRecePayResponse" message="tns:ICompanyService_InsertRecePay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertCash">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertCash" message="tns:ICompanyService_InsertCash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertCashResponse" message="tns:ICompanyService_InsertCash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SubmitServ">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SubmitServ" message="tns:ICompanyService_SubmitServ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SubmitServResponse" message="tns:ICompanyService_SubmitServ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetUserServ">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetUserServ" message="tns:ICompanyService_GetUserServ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetUserServResponse" message="tns:ICompanyService_GetUserServ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateUserServ">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UpdateUserServ" message="tns:ICompanyService_UpdateUserServ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UpdateUserServResponse" message="tns:ICompanyService_UpdateUserServ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetServSucc">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SetServSucc" message="tns:ICompanyService_SetServSucc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SetServSuccResponse" message="tns:ICompanyService_SetServSucc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReturnServ">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/ReturnServ" message="tns:ICompanyService_ReturnServ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/ReturnServResponse" message="tns:ICompanyService_ReturnServ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetServStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetServStatus" message="tns:ICompanyService_GetServStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetServStatusResponse" message="tns:ICompanyService_GetServStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetUserServList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetUserServList" message="tns:ICompanyService_GetUserServList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetUserServListResponse" message="tns:ICompanyService_GetUserServList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UserServValidList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UserServValidList" message="tns:ICompanyService_UserServValidList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UserServValidListResponse" message="tns:ICompanyService_UserServValidList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetUserAllServList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetUserAllServList" message="tns:ICompanyService_GetUserAllServList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetUserAllServListResponse" message="tns:ICompanyService_GetUserAllServList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetServTypeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetServTypeList" message="tns:ICompanyService_GetServTypeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetServTypeListResponse" message="tns:ICompanyService_GetServTypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetServList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetServList" message="tns:ICompanyService_GetServList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetServListResponse" message="tns:ICompanyService_GetServList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetServRecCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetServRecCount" message="tns:ICompanyService_GetServRecCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetServRecCountResponse" message="tns:ICompanyService_GetServRecCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetServType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetServType" message="tns:ICompanyService_GetServType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetServTypeResponse" message="tns:ICompanyService_GetServType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ServTypeUpdateAndSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/ServTypeUpdateAndSave" message="tns:ICompanyService_ServTypeUpdateAndSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/ServTypeUpdateAndSaveResponse" message="tns:ICompanyService_ServTypeUpdateAndSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SysServList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SysServList" message="tns:ICompanyService_SysServList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SysServListResponse" message="tns:ICompanyService_SysServList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SysServRecCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SysServRecCount" message="tns:ICompanyService_SysServRecCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SysServRecCountResponse" message="tns:ICompanyService_SysServRecCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SysServInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SysServInsert" message="tns:ICompanyService_SysServInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SysServInsertResponse" message="tns:ICompanyService_SysServInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SysServUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SysServUpdate" message="tns:ICompanyService_SysServUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SysServUpdateResponse" message="tns:ICompanyService_SysServUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SysServDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SysServDelete" message="tns:ICompanyService_SysServDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SysServDeleteResponse" message="tns:ICompanyService_SysServDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvSubmit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvSubmit" message="tns:ICompanyService_PointsConvSubmit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvSubmitResponse" message="tns:ICompanyService_PointsConvSubmit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvGetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvGetById" message="tns:ICompanyService_PointsConvGetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvGetByIdResponse" message="tns:ICompanyService_PointsConvGetById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvGet" message="tns:ICompanyService_PointsConvGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvGetResponse" message="tns:ICompanyService_PointsConvGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvUpdate" message="tns:ICompanyService_PointsConvUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvUpdateResponse" message="tns:ICompanyService_PointsConvUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvSetValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvSetValid" message="tns:ICompanyService_PointsConvSetValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvSetValidResponse" message="tns:ICompanyService_PointsConvSetValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvSetUnValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvSetUnValid" message="tns:ICompanyService_PointsConvSetUnValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvSetUnValidResponse" message="tns:ICompanyService_PointsConvSetUnValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvGetList" message="tns:ICompanyService_PointsConvGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvGetListResponse" message="tns:ICompanyService_PointsConvGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvGetRecordCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvGetRecordCount" message="tns:ICompanyService_PointsConvGetRecordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvGetRecordCountResponse" message="tns:ICompanyService_PointsConvGetRecordCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvProc">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvProc" message="tns:ICompanyService_PointsConvProc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvProcResponse" message="tns:ICompanyService_PointsConvProc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PointsConvPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PointsConvPlan" message="tns:ICompanyService_PointsConvPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PointsConvPlanResponse" message="tns:ICompanyService_PointsConvPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PowerSubmit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PowerSubmit" message="tns:ICompanyService_PowerSubmit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PowerSubmitResponse" message="tns:ICompanyService_PowerSubmit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PowerGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PowerGet" message="tns:ICompanyService_PowerGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PowerGetResponse" message="tns:ICompanyService_PowerGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PowerIsValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PowerIsValid" message="tns:ICompanyService_PowerIsValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PowerIsValidResponse" message="tns:ICompanyService_PowerIsValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PowerGetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PowerGetById" message="tns:ICompanyService_PowerGetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PowerGetByIdResponse" message="tns:ICompanyService_PowerGetById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PowerProcById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PowerProcById" message="tns:ICompanyService_PowerProcById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PowerProcByIdResponse" message="tns:ICompanyService_PowerProcById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PowerGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PowerGetList" message="tns:ICompanyService_PowerGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PowerGetListResponse" message="tns:ICompanyService_PowerGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PowerGetRecCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PowerGetRecCount" message="tns:ICompanyService_PowerGetRecCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PowerGetRecCountResponse" message="tns:ICompanyService_PowerGetRecCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ComanyAdminGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/ComanyAdminGet" message="tns:ICompanyService_ComanyAdminGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/ComanyAdminGetResponse" message="tns:ICompanyService_ComanyAdminGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PlanUrlGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PlanUrlGetList" message="tns:ICompanyService_PlanUrlGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PlanUrlGetListResponse" message="tns:ICompanyService_PlanUrlGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PlanUrlGetRec">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PlanUrlGetRec" message="tns:ICompanyService_PlanUrlGetRec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PlanUrlGetRecResponse" message="tns:ICompanyService_PlanUrlGetRec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PlanUrlTypeGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/PlanUrlTypeGetList" message="tns:ICompanyService_PlanUrlTypeGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/PlanUrlTypeGetListResponse" message="tns:ICompanyService_PlanUrlTypeGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ComNewsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/ComNewsList" message="tns:ICompanyService_ComNewsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/ComNewsListResponse" message="tns:ICompanyService_ComNewsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ComNewsRecCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/ComNewsRecCount" message="tns:ICompanyService_ComNewsRecCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/ComNewsRecCountResponse" message="tns:ICompanyService_ComNewsRecCount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_ICompanyService" type="tns:ICompanyService">
+    <wsp:PolicyReference URI="#NetTcpBinding_ICompanyService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetCompanyCount">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetCompanyCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUpdateBase">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/CompanyUpdateBase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetCompanyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyListByIdArr">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetCompanyListByIdArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyByUserId">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetCompanyByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUpdateCommission">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/CompanyUpdateCommission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyByDomain">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetCompanyByDomain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompany">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/InsertCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAgentCompany">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/InsertAgentCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyGetByWeiXin">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/CompanyGetByWeiXin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyBindWeiXin">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/CompanyBindWeiXin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyValid">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/CompanyValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRecePay">
+      <wsp:PolicyReference URI="#NetTcpBinding_ICompanyService_InsertRecePay_policy">
+      </wsp:PolicyReference>
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/InsertRecePay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCash">
+      <wsp:PolicyReference URI="#NetTcpBinding_ICompanyService_InsertCash_policy">
+      </wsp:PolicyReference>
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/InsertCash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitServ">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/SubmitServ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserServ">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetUserServ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserServ">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/UpdateUserServ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetServSucc">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/SetServSucc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnServ">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/ReturnServ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetServStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserServList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetUserServList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserServValidList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/UserServValidList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAllServList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetUserAllServList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServTypeList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetServTypeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetServList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServRecCount">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetServRecCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServType">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/GetServType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServTypeUpdateAndSave">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/ServTypeUpdateAndSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysServList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/SysServList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysServRecCount">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/SysServRecCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysServInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/SysServInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysServUpdate">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/SysServUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysServDelete">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/SysServDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvSubmit">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvSubmit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvGetById">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvGetById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvGet">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvUpdate">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvSetValid">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvSetValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvSetUnValid">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvSetUnValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvGetList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvGetRecordCount">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvGetRecordCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvProc">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvProc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointsConvPlan">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PointsConvPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerSubmit">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PowerSubmit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerGet">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PowerGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerIsValid">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PowerIsValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerGetById">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PowerGetById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerProcById">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PowerProcById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerGetList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PowerGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerGetRecCount">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PowerGetRecCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComanyAdminGet">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/ComanyAdminGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlanUrlGetList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PlanUrlGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlanUrlGetRec">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PlanUrlGetRec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlanUrlTypeGetList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/PlanUrlTypeGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComNewsList">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/ComNewsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComNewsRecCount">
+      <soap12:operation soapAction="http://tempuri.org/ICompanyService/ComNewsRecCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompanyService">
+    <wsdl:port name="NetTcpBinding_ICompanyService" binding="tns:NetTcpBinding_ICompanyService">
+      <soap12:address location="net.tcp://1api.968ch.net:8901/CompanyService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://1api.968ch.net:8901/CompanyService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

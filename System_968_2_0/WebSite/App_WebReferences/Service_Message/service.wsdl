@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Message" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IMessage_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IMessage_Add_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <oletx:OleTxAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:oletx="http://schemas.microsoft.com/ws/2006/02/tx/oletx" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy">
+        </oletx:OleTxAssertion>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IMessage_AddSystemMessage_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <oletx:OleTxAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:oletx="http://schemas.microsoft.com/ws/2006/02/tx/oletx" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy">
+        </oletx:OleTxAssertion>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IMessage_AddUserMessage_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <oletx:OleTxAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:oletx="http://schemas.microsoft.com/ws/2006/02/tx/oletx" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy">
+        </oletx:OleTxAssertion>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IMessage_UpdateView_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <oletx:OleTxAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:oletx="http://schemas.microsoft.com/ws/2006/02/tx/oletx" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy">
+        </oletx:OleTxAssertion>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/AC968.Web.Service" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMessage_InfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:InfoById" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_InfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:Info" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_AddSystemMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_AddSystemMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_AddUserMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_AddUserMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_AddReply_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddReply" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_AddReply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddReplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_UpdateView_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateView" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_UpdateView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:List" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_MySendList_InputMessage">
+    <wsdl:part name="parameters" element="tns:MySendList" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_MySendList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MySendListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_UpdateSystemMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSystemMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_UpdateSystemMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSystemMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_NewMessageCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewMessageCount" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_NewMessageCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewMessageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IMessage">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InfoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/InfoById" message="tns:IMessage_InfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/InfoByIdResponse" message="tns:IMessage_InfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/Info" message="tns:IMessage_Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/InfoResponse" message="tns:IMessage_Info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/Add" message="tns:IMessage_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/AddResponse" message="tns:IMessage_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddSystemMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/AddSystemMessage" message="tns:IMessage_AddSystemMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/AddSystemMessageResponse" message="tns:IMessage_AddSystemMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddUserMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/AddUserMessage" message="tns:IMessage_AddUserMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/AddUserMessageResponse" message="tns:IMessage_AddUserMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddReply">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/AddReply" message="tns:IMessage_AddReply_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/AddReplyResponse" message="tns:IMessage_AddReply_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/UpdateView" message="tns:IMessage_UpdateView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/UpdateViewResponse" message="tns:IMessage_UpdateView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="List">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/List" message="tns:IMessage_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/ListResponse" message="tns:IMessage_List_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MySendList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/MySendList" message="tns:IMessage_MySendList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/MySendListResponse" message="tns:IMessage_MySendList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateSystemMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/UpdateSystemMessage" message="tns:IMessage_UpdateSystemMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/UpdateSystemMessageResponse" message="tns:IMessage_UpdateSystemMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/Delete" message="tns:IMessage_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/DeleteResponse" message="tns:IMessage_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NewMessageCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/NewMessageCount" message="tns:IMessage_NewMessageCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/NewMessageCountResponse" message="tns:IMessage_NewMessageCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/Update" message="tns:IMessage_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/UpdateResponse" message="tns:IMessage_Update_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IMessage" type="tns:IMessage">
+    <wsp:PolicyReference URI="#NetTcpBinding_IMessage_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="InfoById">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/InfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsp:PolicyReference URI="#NetTcpBinding_IMessage_Add_policy">
+      </wsp:PolicyReference>
+      <soap12:operation soapAction="http://tempuri.org/IMessage/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemMessage">
+      <wsp:PolicyReference URI="#NetTcpBinding_IMessage_AddSystemMessage_policy">
+      </wsp:PolicyReference>
+      <soap12:operation soapAction="http://tempuri.org/IMessage/AddSystemMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserMessage">
+      <wsp:PolicyReference URI="#NetTcpBinding_IMessage_AddUserMessage_policy">
+      </wsp:PolicyReference>
+      <soap12:operation soapAction="http://tempuri.org/IMessage/AddUserMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReply">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/AddReply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateView">
+      <wsp:PolicyReference URI="#NetTcpBinding_IMessage_UpdateView_policy">
+      </wsp:PolicyReference>
+      <soap12:operation soapAction="http://tempuri.org/IMessage/UpdateView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MySendList">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/MySendList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSystemMessage">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/UpdateSystemMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMessageCount">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/NewMessageCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://tempuri.org/IMessage/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Message">
+    <wsdl:port name="NetTcpBinding_IMessage" binding="tns:NetTcpBinding_IMessage">
+      <soap12:address location="net.tcp://api.968ch.com:8900/MessageService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://api.968ch.com:8900/MessageService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

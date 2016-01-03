@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Camel.ApiModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Camel.ApiModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Camel.ORM" />
+  <xs:complexType name="PlanAgent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Camel.ORM" base="q1:DataEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgentId" type="xs:int" />
+          <xs:element minOccurs="0" name="AgentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AgentUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AreaBackLogo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeHelpImg" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Commission" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CompanyUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CopyRight" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CssFile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefPlanCommission" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LevelId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MallBackUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MallUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MediaBackLogo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MicroForumUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrevUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RenCaiBackUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RenCaiUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SceneFile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TitleBackColor1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TitleBackColor2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TraceBackUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TraceUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TypeFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="UserCenterUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlanAgent" nillable="true" type="tns:PlanAgent" />
+  <xs:complexType name="ArrayOfPlanAgent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlanAgent" nillable="true" type="tns:PlanAgent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlanAgent" nillable="true" type="tns:ArrayOfPlanAgent" />
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e9bb4979-a135-4946-9556-c2477a2312c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://1api.968ch.net:8901/AgentService.svc/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="2a395357-4872-47ce-9a0a-f0764038ecc0" SourceId="1" SourceUrl="net.tcp://1api.968ch.net:8901/AgentService.svc/mex/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="4502025b-c966-40b2-851a-6ce98976c4b2" SourceId="1" SourceUrl="net.tcp://1api.968ch.net:8901/AgentService.svc/mex/mex" />
+    <MetadataFile FileName="service22.xsd" MetadataType="Schema" ID="ff69c1a2-ed1d-4462-aa81-53302866bfc0" SourceId="1" SourceUrl="net.tcp://1api.968ch.net:8901/AgentService.svc/mex/mex" />
+    <MetadataFile FileName="Camel.ApiModel1.xsd" MetadataType="Schema" ID="ecdd71a2-0995-46f2-90e8-60b0977e5a77" SourceId="1" SourceUrl="net.tcp://1api.968ch.net:8901/AgentService.svc/mex/mex" />
+    <MetadataFile FileName="Camel.ORM1.xsd" MetadataType="Schema" ID="737efe2a-7106-46ca-8979-0e4e3a509284" SourceId="1" SourceUrl="net.tcp://1api.968ch.net:8901/AgentService.svc/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

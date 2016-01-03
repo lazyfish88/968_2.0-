@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bdb1cf1f-6f93-4674-8dd1-858736fd9ba6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://apicomm.968ch.com:8900/CompanyService.svc/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="e4a276bd-3b68-42f7-a6f4-90b0cb83b672" SourceId="1" SourceUrl="net.tcp://apicomm.968ch.com:8900/CompanyService.svc/mex/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="774b98e0-a4ab-4bc0-9011-5c888b73feb8" SourceId="1" SourceUrl="net.tcp://apicomm.968ch.com:8900/CompanyService.svc/mex/mex" />
+    <MetadataFile FileName="service22.xsd" MetadataType="Schema" ID="5c9edd0a-5502-4121-abac-43bda8646add" SourceId="1" SourceUrl="net.tcp://apicomm.968ch.com:8900/CompanyService.svc/mex/mex" />
+    <MetadataFile FileName="Camel.ApiModel1.xsd" MetadataType="Schema" ID="24191ead-6d51-47e5-8dbf-51b32d848f9e" SourceId="1" SourceUrl="net.tcp://apicomm.968ch.com:8900/CompanyService.svc/mex/mex" />
+    <MetadataFile FileName="System.Data1.xsd" MetadataType="Schema" ID="6ef0761d-12de-45fe-b13b-1337d2e00faa" SourceId="1" SourceUrl="net.tcp://apicomm.968ch.com:8900/CompanyService.svc/mex/mex" />
+    <MetadataFile FileName="Camel.ORM1.xsd" MetadataType="Schema" ID="f9fbbc7a-58d2-4931-8bbd-89515a4679a0" SourceId="1" SourceUrl="net.tcp://apicomm.968ch.com:8900/CompanyService.svc/mex/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="a14a7da9-3089-4dc7-9ecf-82695f2897ac" SourceId="1" SourceUrl="net.tcp://apicomm.968ch.com:8900/CompanyService.svc/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

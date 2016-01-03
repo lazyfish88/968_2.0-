@@ -1,0 +1,55 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
+
+namespace Ac968.SystemModuleSetMeal.Model
+{
+    [DataContract(Namespace = "Ac968.SystemModuleSetMeal.Model")]
+    [Table("V_SystemModuleSetMealDetail")]
+    public class V_SystemModuleSetMealDetail
+    {
+        #region SystemModuleSetMealDetail表
+        [DataMember]
+        [Key]
+        public int id { set; get; }
+        /// <summary>
+        /// 套餐ID
+        /// </summary>
+        [DataMember]
+        public int SystemModuleSetMealId { set; get; }
+        /// <summary>
+        /// 模块ID
+        /// </summary>
+        [DataMember]
+        public int SystemModuleId { set; get; }
+        /// <summary>
+        /// 使用天数
+        /// </summary>
+        [DataMember]
+        public int Day { set; get; }
+        #endregion
+
+        #region SystemModule表
+        /// <summary>
+        /// 模块名称
+        /// </summary>
+        [DataMember]
+        public string Name { set; get; }
+        /// <summary>
+        /// 是否需要企业身份
+        /// </summary>
+        [DataMember]
+        public bool NeedCompany { set; get; }
+        /// <summary>
+        /// 图标
+        /// </summary>
+        [DataMember]
+        public string Icon { set; get; }
+        /// <summary>
+        /// 说明地址
+        /// </summary>
+        [DataMember]
+        public string DescriptionUrl { set; get; }
+        #endregion
+    }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aaa50938-5769-4f78-90b0-74ee9cb544fa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54028/SystemModule.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SystemModule.xsd" MetadataType="Schema" ID="d358bcd2-fe93-4740-8a8f-3ed5e712d980" SourceId="1" SourceUrl="http://localhost:54028/SystemModule.svc?xsd=xsd2" />
+    <MetadataFile FileName="SystemModule.disco" MetadataType="Disco" ID="a8065fe3-d170-444a-b9cf-0e01a05a5047" SourceId="1" SourceUrl="http://localhost:54028/SystemModule.svc?disco" />
+    <MetadataFile FileName="SystemModule1.xsd" MetadataType="Schema" ID="6f8c03e1-8774-4c13-91fb-869b2cb489a1" SourceId="1" SourceUrl="http://localhost:54028/SystemModule.svc?xsd=xsd0" />
+    <MetadataFile FileName="SystemModule2.xsd" MetadataType="Schema" ID="92c2a527-203c-4246-9df3-038f1f581c5d" SourceId="1" SourceUrl="http://localhost:54028/SystemModule.svc?xsd=xsd1" />
+    <MetadataFile FileName="SystemModuleBLL.wsdl" MetadataType="Wsdl" ID="53ba735e-39b4-4961-a2c3-4033b5a1ebf3" SourceId="1" SourceUrl="http://localhost:54028/SystemModule.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

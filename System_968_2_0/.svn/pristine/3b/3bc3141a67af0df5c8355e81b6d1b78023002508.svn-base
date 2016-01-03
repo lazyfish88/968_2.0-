@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CompanyFastModuleBLL" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54028/CompanyFastModule.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54028/CompanyFastModule.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54028/CompanyFastModule.svc?xsd=xsd2" namespace="Ac968.SystemModuleSetMeal.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICompanyFastModule_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:List" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_Edit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Edit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_BatchAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:BatchAdd" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_BatchAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BatchAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_Del_InputMessage">
+    <wsdl:part name="parameters" element="tns:Del" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_Del_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:Info" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyFastModule_Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICompanyFastModule">
+    <wsdl:operation name="List">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyFastModule/List" message="tns:ICompanyFastModule_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyFastModule/ListResponse" message="tns:ICompanyFastModule_List_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyFastModule/Edit" message="tns:ICompanyFastModule_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyFastModule/EditResponse" message="tns:ICompanyFastModule_Edit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyFastModule/BatchAdd" message="tns:ICompanyFastModule_BatchAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyFastModule/BatchAddResponse" message="tns:ICompanyFastModule_BatchAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Del">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyFastModule/Del" message="tns:ICompanyFastModule_Del_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyFastModule/DelResponse" message="tns:ICompanyFastModule_Del_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyFastModule/Info" message="tns:ICompanyFastModule_Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyFastModule/InfoResponse" message="tns:ICompanyFastModule_Info_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICompanyFastModule" type="tns:ICompanyFastModule">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="List">
+      <soap:operation soapAction="http://tempuri.org/ICompanyFastModule/List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyFastModule/Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchAdd">
+      <soap:operation soapAction="http://tempuri.org/ICompanyFastModule/BatchAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Del">
+      <soap:operation soapAction="http://tempuri.org/ICompanyFastModule/Del" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <soap:operation soapAction="http://tempuri.org/ICompanyFastModule/Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompanyFastModuleBLL">
+    <wsdl:port name="BasicHttpBinding_ICompanyFastModule" binding="tns:BasicHttpBinding_ICompanyFastModule">
+      <soap:address location="http://localhost:54028/CompanyFastModule.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

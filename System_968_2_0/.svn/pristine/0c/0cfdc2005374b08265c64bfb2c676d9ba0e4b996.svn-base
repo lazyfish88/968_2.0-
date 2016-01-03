@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AgentService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IAgentService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Camel.ApiModel" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Camel.ORM" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAgentService_AgentInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgentInsert" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_AgentInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgentInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_GetAgentByAgentUrl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgentByAgentUrl" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_GetAgentByAgentUrl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgentByAgentUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_GetDataByAgentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByAgentId" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_GetDataByAgentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByAgentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_AgentGetByComId_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgentGetByComId" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_AgentGetByComId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgentGetByComIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_AgentGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgentGetList" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_AgentGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgentGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_AgentGetRecCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgentGetRecCount" />
+  </wsdl:message>
+  <wsdl:message name="IAgentService_AgentGetRecCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgentGetRecCountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAgentService">
+    <wsdl:operation name="AgentInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/AgentInsert" message="tns:IAgentService_AgentInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/AgentInsertResponse" message="tns:IAgentService_AgentInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentByAgentUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/GetAgentByAgentUrl" message="tns:IAgentService_GetAgentByAgentUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/GetAgentByAgentUrlResponse" message="tns:IAgentService_GetAgentByAgentUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByAgentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/GetDataByAgentId" message="tns:IAgentService_GetDataByAgentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/GetDataByAgentIdResponse" message="tns:IAgentService_GetDataByAgentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgentGetByComId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/AgentGetByComId" message="tns:IAgentService_AgentGetByComId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/AgentGetByComIdResponse" message="tns:IAgentService_AgentGetByComId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgentGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/AgentGetList" message="tns:IAgentService_AgentGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/AgentGetListResponse" message="tns:IAgentService_AgentGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgentGetRecCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgentService/AgentGetRecCount" message="tns:IAgentService_AgentGetRecCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgentService/AgentGetRecCountResponse" message="tns:IAgentService_AgentGetRecCount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IAgentService" type="tns:IAgentService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAgentService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="AgentInsert">
+      <soap12:operation soapAction="http://tempuri.org/IAgentService/AgentInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentByAgentUrl">
+      <soap12:operation soapAction="http://tempuri.org/IAgentService/GetAgentByAgentUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByAgentId">
+      <soap12:operation soapAction="http://tempuri.org/IAgentService/GetDataByAgentId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgentGetByComId">
+      <soap12:operation soapAction="http://tempuri.org/IAgentService/AgentGetByComId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgentGetList">
+      <soap12:operation soapAction="http://tempuri.org/IAgentService/AgentGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgentGetRecCount">
+      <soap12:operation soapAction="http://tempuri.org/IAgentService/AgentGetRecCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgentService">
+    <wsdl:port name="NetTcpBinding_IAgentService" binding="tns:NetTcpBinding_IAgentService">
+      <soap12:address location="net.tcp://1api.968ch.net:8901/AgentService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://1api.968ch.net:8901/AgentService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

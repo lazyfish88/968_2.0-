@@ -1,0 +1,9 @@
+Z:\Documents\百度网盘\百度云同步盘\项目(.net)\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\bin\Release\Ac968.SystemModuleSetMeal.Utility.dll
+Z:\Documents\百度网盘\百度云同步盘\项目(.net)\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\bin\Release\Ac968.SystemModuleSetMeal.Utility.pdb
+Z:\Documents\百度网盘\百度云同步盘\项目(.net)\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\obj\Release\Ac968.SystemModuleSetMeal.Utility.csprojResolveAssemblyReference.cache
+Z:\Documents\百度网盘\百度云同步盘\项目(.net)\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\obj\Release\Ac968.SystemModuleSetMeal.Utility.dll
+Z:\Documents\百度网盘\百度云同步盘\项目(.net)\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\obj\Release\Ac968.SystemModuleSetMeal.Utility.pdb
+C:\Project\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\bin\Release\Ac968.SystemModuleSetMeal.Utility.dll
+C:\Project\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\bin\Release\Ac968.SystemModuleSetMeal.Utility.pdb
+C:\Project\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\obj\Release\Ac968.SystemModuleSetMeal.Utility.dll
+C:\Project\968\2.0套餐管理\System_968_2_0\Ac968.SystemModuleSetMeal.Utility\obj\Release\Ac968.SystemModuleSetMeal.Utility.pdb

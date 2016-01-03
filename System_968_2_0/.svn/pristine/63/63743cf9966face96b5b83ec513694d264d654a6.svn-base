@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="80603713-ec99-4136-a235-55ed1dc5bc58" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54028/SystemModuleSetMealLevelPrice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SystemModuleSetMealLevelPrice.xsd" MetadataType="Schema" ID="b33d46e8-700e-40c7-9732-3e383d5889b3" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealLevelPrice.svc?xsd=xsd2" />
+    <MetadataFile FileName="SystemModuleSetMealLevelPrice1.xsd" MetadataType="Schema" ID="2a39fb59-e958-4bd8-aff7-445205ae6fa0" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealLevelPrice.svc?xsd=xsd0" />
+    <MetadataFile FileName="SystemModuleSetMealLevelPrice2.xsd" MetadataType="Schema" ID="35372b96-35f8-435f-b6a5-8d5c89df7a62" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealLevelPrice.svc?xsd=xsd1" />
+    <MetadataFile FileName="SystemModuleSetMealLevelPriceBLL.wsdl" MetadataType="Wsdl" ID="3c5c7610-785e-42dd-b2a2-aaa3706dcd23" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealLevelPrice.svc?wsdl" />
+    <MetadataFile FileName="SystemModuleSetMealLevelPrice.disco" MetadataType="Disco" ID="26968c67-bd27-4fb7-a2f1-69ecda67fac9" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealLevelPrice.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

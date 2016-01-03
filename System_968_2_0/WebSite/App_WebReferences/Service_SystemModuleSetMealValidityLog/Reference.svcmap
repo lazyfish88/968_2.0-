@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0bd4e7a2-c0fa-44c2-94ed-b06ef0301ef1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54028/SystemModuleSetMealValidityLog.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SystemModuleSetMealValidityLogBLL.wsdl" MetadataType="Wsdl" ID="a0ee3ce2-a2cc-4938-8797-15ac252cab5b" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealValidityLog.svc?wsdl" />
+    <MetadataFile FileName="SystemModuleSetMealValidityLog.xsd" MetadataType="Schema" ID="8e306306-26f8-4640-9aca-143ed2ed718b" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealValidityLog.svc?xsd=xsd0" />
+    <MetadataFile FileName="SystemModuleSetMealValidityLog1.xsd" MetadataType="Schema" ID="d99f8ad0-9a03-496a-8da1-7d5923be4260" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealValidityLog.svc?xsd=xsd1" />
+    <MetadataFile FileName="SystemModuleSetMealValidityLog2.xsd" MetadataType="Schema" ID="4f90d7a1-b620-4ddc-8a03-cc2960042d2e" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealValidityLog.svc?xsd=xsd2" />
+    <MetadataFile FileName="SystemModuleSetMealValidityLog.disco" MetadataType="Disco" ID="4c863150-b4ba-4206-8590-cab7ab26ad67" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealValidityLog.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

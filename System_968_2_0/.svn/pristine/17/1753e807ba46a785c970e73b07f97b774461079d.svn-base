@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="61514ceb-69f6-4ef8-b294-326a93795026" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54028/CompanyModule.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CompanyModule.xsd" MetadataType="Schema" ID="e7164c50-0bf2-4081-942a-1de4f26a19e8" SourceId="1" SourceUrl="http://localhost:54028/CompanyModule.svc?xsd=xsd1" />
+    <MetadataFile FileName="CompanyModule1.xsd" MetadataType="Schema" ID="0cd96e97-d44c-47fb-8809-c0df6aa96e1b" SourceId="1" SourceUrl="http://localhost:54028/CompanyModule.svc?xsd=xsd0" />
+    <MetadataFile FileName="CompanyModuleBLL.wsdl" MetadataType="Wsdl" ID="ecaf504c-9445-42b7-bb44-f6e32f086fdc" SourceId="1" SourceUrl="http://localhost:54028/CompanyModule.svc?wsdl" />
+    <MetadataFile FileName="CompanyModule.disco" MetadataType="Disco" ID="93808745-40af-4152-ac5f-492422e0e6ac" SourceId="1" SourceUrl="http://localhost:54028/CompanyModule.svc?disco" />
+    <MetadataFile FileName="CompanyModule2.xsd" MetadataType="Schema" ID="ff66d173-d782-4981-a56b-30738c55b517" SourceId="1" SourceUrl="http://localhost:54028/CompanyModule.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

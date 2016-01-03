@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <system.serviceModel>
+        <behaviors>
+            <serviceBehaviors>
+                <behavior name="">
+                    <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" />
+                    <serviceDebug includeExceptionDetailInFaults="false" />
+                </behavior>
+            </serviceBehaviors>
+        </behaviors>
+        <services>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.CompanyModuleBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.ICompanyModule">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/CompanyModuleBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.PlanAgentLevelBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.IPlanAgentLevel">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/PlanAgentLevelBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.SystemModuleBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.ISystemModule">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/SystemModuleBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.SystemModuleSetMealBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.ISystemModuleSetMeal">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/SystemModuleSetMealBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.SystemModuleSetMealDetailBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.ISystemModuleSetMealDetail">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/SystemModuleSetMealDetailBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.SystemModuleSetMealLevelPriceBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.ISystemModuleSetMealLevelPrice">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/SystemModuleSetMealLevelPriceBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.PlanAgentOrderBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.IPlanAgentOrder">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/PlanAgentOrderBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.CompanyFastModuleBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.ICompanyFastModule">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/CompanyFastModuleBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.CustomApplyBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.ICustomApply">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/CustomApplyBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+            <service name="Ac968.SystemModuleSetMeal.ServiceBLL.SystemModuleSetMealValidityLogBLL">
+                <endpoint address="" binding="basicHttpBinding" contract="Ac968.SystemModuleSetMeal.Interface.ISystemModuleSetMealValidityLog">
+                    <identity>
+                        <dns value="localhost" />
+                    </identity>
+                </endpoint>
+                <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost:8733/Design_Time_Addresses/Ac968.SystemModuleSetMeal.ServiceBLL/SystemModuleSetMealValidityLogBLL/" />
+                    </baseAddresses>
+                </host>
+            </service>
+        </services>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,60 @@
+﻿using Ac968.SystemModuleSetMeal.Model;
+using Ac968.SystemModuleSetMeal.Utility;
+using System;
+
+public partial class SystemModule_SetFastModule : SetMealPageBase
+{
+    /// <summary>
+    /// 当前登陆企业ID
+    /// </summary>
+    protected int LoginCompanyId
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(System.Configuration.ConfigurationSettings.AppSettings.Get("CompanyId")))
+            {
+                return Convert.ToInt32(System.Configuration.ConfigurationSettings.AppSettings.Get("CompanyId"));
+            }
+            return Convert.ToInt32(CookiesUtil.GetCookiesValue_V2("Camel", "CenterComId"));
+            //return 2;
+        }
+    }
+
+    protected CompanyFastModule[] __CompanyFastList;
+    protected string __FnUrls;
+    protected string __HasModuleIds;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Service_CompanyFastModule.CompanyFastModuleClient bll = new Service_CompanyFastModule.CompanyFastModuleClient();
+        if (Request.HttpMethod.ToLower() == "post")
+        {
+            bll.BatchAdd(LoginCompanyId
+                , GetRequest.GetRequestValue("ModuleIds", Method.Post)
+                , GetRequest.GetRequestValue("FnUrls", Method.Post)
+                , GetRequest.GetRequestValue("FnNames", Method.Post)
+                );
+            bll.Abort();
+            bll.Close();
+            Success();
+        }
+        else
+        {
+            Service_CompanyModule.CompanyModuleClient cmBll = new Service_CompanyModule.CompanyModuleClient();
+            __CompanyFastList = bll.List(LoginCompanyId);
+            V_CompanyModule[] cmList = cmBll.List(LoginCompanyId);
+            __HasModuleIds = ",";
+            foreach (V_CompanyModule item in cmList)
+            {
+                __HasModuleIds +=item.ModuleId+ ",";
+            }
+            foreach (CompanyFastModule item in __CompanyFastList)
+            {
+                __FnUrls += item.Url + "|";
+            }
+
+            bll.Abort();
+            bll.Close();
+        }
+    }
+}

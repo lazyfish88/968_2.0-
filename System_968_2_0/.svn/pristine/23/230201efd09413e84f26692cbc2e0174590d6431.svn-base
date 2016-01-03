@@ -1,0 +1,194 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Master_V2.aspx.cs" Inherits="Master_V2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/Style/menu_v2.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://m.968ch.com/Scripts/jquery-1.7.2.min.js"></script>
+    <script>
+        $(function () {
+            var height = $("#Body").height()-156;
+            console.log(height)
+            $(".Level_1,.Level_2_Box").height(height)
+            $("#iframe1").height($("#Body").height()-40)
+            $(".Level_1 li").click(function () {
+                $(".Level_2_Box").hide();
+                $("#" + $(this).attr("data-for")).show();
+                $(".Level_1 li").removeClass("active");
+                $(this).addClass("active");
+            })
+        })
+        function OpenWindow(id, url) {
+            switch (parseInt(id)) {
+                default:
+                    $("#iframe1").attr("src", url);
+                    break;
+            }
+        }
+        function GoPayModule(id) {
+            $("#iframe1").attr("src", "SystemModule/SystemModule_PaySetMeal.aspx");
+        }
+    </script>
+</head>
+<body>
+    <div id="Body">
+        <div class="BodyLeft">
+            <div class="LogoBox" style="background-color:<%=__OEMInfo.TitleBackColor2%>; background-image:url(http://<%=__OEMInfo.AgentUrl + __OEMInfo.MediaBackLogo%>)">
+            </div>
+            <div class="MenuBox">
+                <ul class="Level_1">
+                    <li class="menu_1 item <%=__FastModule.Length>0?"active":"" %>" data-for="Menu1"><span></span></li>
+                    <li class="menu_2 item" data-for="Menu2"><span></span></li>
+                    <li class="menu_3 item" data-for="Menu3"><span></span></li>
+                    <li class="menu_4 item" data-for="Menu4"><span></span></li>
+                    <li class="menu_5 item <%=__FastModule.Length>0?"":"active" %>" data-for="Menu5"><span></span></li>
+                </ul>
+                <div id="Menu1" class="Level_2_Box" style=" <%=__FastModule.Length>0?"display:block;":"" %>">
+                    <h4 id="FastTitle"><span class="title">快速入口</span><span class="setting" onclick="OpenWindow(0,'SystemModule/SystemModule_SetFastModule.aspx')"></span></h4>
+                    <div class="Level_2" style="clear:both;">
+                        <ul class="OpenMenu">
+                            <%
+                                foreach (Ac968.SystemModuleSetMeal.Model.CompanyFastModule item in __FastModule)
+                                {
+                                    %>
+                            <li><a href="<%=item.Url %>" target="iframe1"><%=item.Name %></a></li>
+                            <%
+                                }
+                                 %>
+                        </ul>
+                    </div>
+                </div>
+                <div id="Menu2" class="Level_2_Box">
+                    <h4>功能应用区</h4>
+                    <div class="Level_2">
+                        <ul class="OpenMenu">
+                            <%
+                                foreach (Ac968.SystemModuleSetMeal.Model.SystemModule item in __OpenModule_1)
+                                {
+                                    if (item.id==4)
+                                    {
+                                        %>
+                            <li><a href="<%=item.Url %>" target="_blank"><%=item.Name %></a></li>
+                            <%
+                                    }
+                                    else
+                                    {
+                                        %>
+                            <li onclick="OpenWindow(<%=item.id %>,'<%=item.Url %>')"><%=item.Name %></li>
+                            <%
+                                    }
+                                }
+                                 %>
+                        </ul>
+                        <div class="NotOpenMenu">
+                            <h5>未开通</h5>
+                            <ul>
+                            <%
+                                foreach (Ac968.SystemModuleSetMeal.Model.SystemModule item in __NotOpenModule_1)
+                                {
+                                    %>
+                            <li onclick="GoPayModule(<%=item.id %>)"><%=item.Name %></li>
+                            <%
+                                }
+                                 %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="Menu3" class="Level_2_Box">
+                    <h4>营销推广区</h4>
+                    <div class="Level_2">
+                        <ul class="OpenMenu">
+                            <%
+                                foreach (Ac968.SystemModuleSetMeal.Model.SystemModule item in __OpenModule_2)
+                                {
+                                    %>
+                            <li onclick="OpenWindow(<%=item.id %>,'<%=item.Url %>')"><%=item.Name %></li>
+                            <%
+                                }
+                                 %>
+                        </ul>
+                        <div class="NotOpenMenu">
+                            <h5>未开通</h5>
+                            <ul>
+                            <%
+                                foreach (Ac968.SystemModuleSetMeal.Model.SystemModule item in __NotOpenModule_2)
+                                {
+                                    %>
+                            <li onclick="GoPayModule(<%=item.id %>)"><%=item.Name %></li>
+                            <%
+                                }
+                                 %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="Menu4" class="Level_2_Box">
+                    <h4>公共管理区</h4>
+                    <div class="Level_2">
+                        <ul class="OpenMenu">
+                            <%
+                                foreach (Ac968.SystemModuleSetMeal.Model.SystemModule item in __OpenModule_3)
+                                {
+                                    %>
+                            <li onclick="OpenWindow(<%=item.id %>,'<%=item.Url %>')"><%=item.Name %></li>
+                            <%
+                                }
+                                 %>
+                        </ul>
+                        <div class="NotOpenMenu">
+                            <h5>未开通</h5>
+                            <ul>
+                            <%
+                                foreach (Ac968.SystemModuleSetMeal.Model.SystemModule item in __NotOpenModule_3)
+                                {
+                                    %>
+                            <li onclick="GoPayModule(<%=item.id %>)"><%=item.Name %></li>
+                            <%
+                                }
+                                 %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="Menu5" class="Level_2_Box" style=" <%=__FastModule.Length>0?"":"display:block;" %>">
+                    <h4>用户基本信息</h4>
+                    <div class="Level_2">
+                        <ul class="OpenMenu">
+                            <li><a href="http://personpc.968ch.com/Setting/BaseSetting" target="iframe1">基本设置</a></li>
+                            <li><a href="http://personpc.968ch.com/Card/CardList" target="iframe1">我的名片</a></li>
+                            <li><a href="http://personpc.968ch.com/Friend/List" target="iframe1">我的好友</a></li>
+                            <li><a href="http://personpc.968ch.com/Account/Index" target="iframe1">我的帐户</a></li>
+                            <li><a href="http://personpc.968ch.com/Order/List?s=0" target="iframe1">订单管理</a></li>
+                            <li><a href="http://personpc.968ch.com/Agent/BaseSetting" target="iframe1">品牌代理</a></li>
+                            <li><a href="http://personpc.968ch.com/Dis/BaseSetting" target="iframe1">我要分销</a></li>
+                            <li><a href="http://personpc.968ch.com/Favorite/List" target="iframe1">我的收藏</a></li>
+                            <li><a href="http://personpc.968ch.com/Coupon/List" target="iframe1">优惠券</a></li>
+                            <li><a href="http://personpc.968ch.com/Message/List?state=1" target="iframe1">消息</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="BodyMain">
+            <div class="tool">
+                <div class="name">欢迎您，<%=__Company.Name %></div>
+                <div class="button">
+                    <a href="http://www.968ch.com" class="home"><i></i>首页</a>
+                    <a target="iframe1" href="/admin/systemmodule/SystemModule_PaySetMeal.aspx" class="module_pay"><i></i>套餐购买</a>
+                    <a target="iframe1" href="/admin/GenCard.aspx" class="qr"><i></i>二维码生成器</a>
+                    <a target="iframe1" href="/admin/Console.aspx?power=4&sub=2" class="pwd"><i></i>密码修改</a>
+                    <a href="LoginOut.ashx" class="logout"><i></i>退出</a>
+                </div>
+            </div>
+            <iframe id="iframe1" name="iframe1" style="width:100%;" frameborder="0" src="SystemModule_PaySetMeal.aspx"></iframe>
+        </div>
+    </div>
+</body>
+</html>

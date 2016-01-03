@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54028/SystemModuleSetMealLevelPrice.svc?xsd=xsd2" namespace="Ac968.SystemModuleSetMeal.Model" />
+  <xs:element name="List">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setMealId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="Ac968.SystemModuleSetMeal.Model" minOccurs="0" name="ListResult" nillable="true" type="q1:ArrayOfV_SystemModuleSetMealLevel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Edit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="Ac968.SystemModuleSetMeal.Model" minOccurs="0" name="model" nillable="true" type="q2:SystemModuleSetMealLevelPrice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="Ac968.SystemModuleSetMeal.Model" minOccurs="0" name="EditResult" nillable="true" type="q3:SystemModuleSetMealLevelPrice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Del">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="Ac968.SystemModuleSetMeal.Model" minOccurs="0" name="InfoResult" nillable="true" type="q4:SystemModuleSetMealLevelPrice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InfoByLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setMealId" type="xs:int" />
+        <xs:element minOccurs="0" name="levelId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InfoByLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="Ac968.SystemModuleSetMeal.Model" minOccurs="0" name="InfoByLevelResult" nillable="true" type="q5:SystemModuleSetMealLevelPrice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,39 @@
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
+
+namespace Ac968.SystemModuleSetMeal.Model
+{
+    [DataContract(Namespace = "Ac968.SystemModuleSetMeal.Model")]
+    [Table("SystemModuleSetMeal")]
+    public class SystemModuleSetMeal
+    {
+        [DataMember]
+        [Key]
+        public int id { set; get; }
+        /// <summary>
+        /// 名称
+        /// </summary>
+        [DataMember]
+        public string Name { set; get; }
+        /// <summary>
+        /// 价格
+        /// </summary>
+        [DataMember]
+        public decimal Price { set; get; }
+        /// <summary>
+        /// 是否启用
+        /// </summary>
+        [DataMember]
+        public bool Enable { set; get; }
+        /// <summary>
+        /// 添加时间
+        /// </summary>
+        [DataMember]
+        public DateTime AddDate { set; get; }
+
+        [NotMapped]
+        public V_SystemModuleSetMealDetail[] ModuleList { get; set; }
+    }
+}

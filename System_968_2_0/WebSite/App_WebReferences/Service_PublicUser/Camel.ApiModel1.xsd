@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Camel.ApiModel" elementFormDefault="qualified" targetNamespace="Camel.ApiModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UserSecureBind">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecureAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecureType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserSecureBind" nillable="true" type="tns:UserSecureBind" />
+  <xs:complexType name="UserSecureBindF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecureAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecureType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserSecureBindF" nillable="true" type="tns:UserSecureBindF" />
+  <xs:complexType name="ArrayOfUserSecureBind">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserSecureBind" nillable="true" type="tns:UserSecureBind" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserSecureBind" nillable="true" type="tns:ArrayOfUserSecureBind" />
+  <xs:complexType name="ArrayOfUserSecureBindF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserSecureBindF" nillable="true" type="tns:UserSecureBindF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserSecureBindF" nillable="true" type="tns:ArrayOfUserSecureBindF" />
+</xs:schema>

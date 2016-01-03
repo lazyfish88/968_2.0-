@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Ac968.SystemModuleSetMeal.Model" elementFormDefault="qualified" targetNamespace="Ac968.SystemModuleSetMeal.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfSystemModuleSetMealValidityLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SystemModuleSetMealValidityLog" nillable="true" type="tns:SystemModuleSetMealValidityLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystemModuleSetMealValidityLog" nillable="true" type="tns:ArrayOfSystemModuleSetMealValidityLog" />
+  <xs:complexType name="SystemModuleSetMealValidityLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+      <xs:element minOccurs="0" name="ModuleIds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleNames" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:long" />
+      <xs:element minOccurs="0" name="SetMealId" type="xs:int" />
+      <xs:element minOccurs="0" name="SetMealName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidityDateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidityDateStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SystemModuleSetMealValidityLog" nillable="true" type="tns:SystemModuleSetMealValidityLog" />
+</xs:schema>

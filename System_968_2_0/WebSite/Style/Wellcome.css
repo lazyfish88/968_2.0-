@@ -1,0 +1,325 @@
+﻿
+body {
+	font-family: "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, STHeiti, sans-serif;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 20px;
+}
+
+ul, li, h5, h6 {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+h4 {
+	border-left: 5px solid #fd9834;
+	border-bottom: 1px solid #efefef;
+	padding: 10px;
+	display: block;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 15px;
+}
+
+	h4 .title1 {
+		color: #fd9834;
+	}
+
+	h4 .title2 {
+		color: #666;
+	}
+
+.main {
+	padding-top: 10px;
+}
+
+.left_number {
+	position: absolute;
+	margin-right: 20px;
+	margin-left: 47px;
+	width: 52px;
+}
+
+	.left_number > div {
+		background: url(/img/wellcome.png);
+		height: 60px;
+	}
+
+	.left_number .one {
+		background-position: 0 0;
+	}
+
+	.left_number .two {
+		margin-top: 105px;
+		background-position: 0 -67px;
+	}
+
+	.left_number .three {
+		margin-top: 345px;
+		background-position: 0 -143px;
+	}
+
+.module_section {
+	margin-left: 130px;
+}
+
+.section_1 {
+}
+
+	.section_1 span {
+		float: left;
+	}
+
+	.section_1 .icon {
+		display: inline-block;
+		border-radius: 5px;
+		padding: 4px;
+		background: #2a3541;
+	}
+
+	.section_1 .text {
+		line-height: 40px;
+		margin: 0 10px;
+		display: inline-block;
+	}
+
+	.section_1 .icon span {
+		display: inline-block;
+		width: 34px;
+		height: 27px;
+		background: url(/img/wellcome.png);
+	}
+
+	.section_1:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+
+
+.section_2 {
+	border: 1px solid #ddd;
+	padding-bottom: 20px;
+	margin: 20px;
+	margin-left: 0;
+	width: 776px;
+}
+
+	.section_2 li {
+		float: left;
+		width: 90px;
+		padding: 0 10px;
+		border-right: 1px solid #ddd;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+		.section_2 li .icon {
+			width: 33px;
+			height: 33px;
+			display: block;
+			margin: 0 auto;
+			background: url(/img/wellcome.png) no-repeat;
+		}
+
+		.section_2 li:nth-child(7n), .section_2 li:last-child {
+			border-right: none;
+		}
+
+		.section_2 li .name {
+			margin-top: 10px;
+			color: #221815;
+		}
+
+	.section_2:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+
+.section_3 {
+	float: left;
+}
+
+	.section_3 h5 {
+		height: 30px;
+		font-weight: normal;
+	}
+
+		.section_3 h5 * {
+			float: left;
+			font-size: 16px;
+		}
+
+		.section_3 h5 i {
+			display: inline-block;
+			background: url(/img/wellcome.png) -80px -71px;
+			margin-top: 3px;
+			width: 30px;
+			height: 20px;
+			margin-right: 5px;
+		}
+
+	.section_3 .module {
+		clear: both;
+		border: 1px solid #ddd;
+		border-bottom: 0;
+		margin-top: 10px;
+	}
+
+		.section_3 .module .item {
+			clear: both;
+			position: relative;
+			border-bottom: 1px solid #ddd;
+		}
+
+			.section_3 .module .item .hot {
+				position: absolute;
+				left: 155px;
+				top: 5px;
+				z-index: 10;
+				width: 35px;
+				background: url(/img/wellcome.png) 1px -465px;
+				height: 19px;
+			}
+
+			.section_3 .module .item:after {
+				display: block;
+				clear: both;
+				content: "";
+			}
+
+		.section_3 .module .icon {
+			float: left;
+			background: #2a3541;
+			width: 72px;
+			height: 74px;
+			text-align: center;
+			border-bottom: 1px solid #ddd;
+		}
+
+			.section_3 .module .icon span {
+				margin: 0 auto;
+				margin-top: 13px;
+				background: url(/img/wellcome.png);
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+			}
+
+		.section_3 .module .list {
+			float: left;
+			width: 695px;
+		}
+
+			.section_3 .module .list .top {
+				height: 20px;
+			}
+
+			.section_3 .module .list h6 {
+				font-weight: normal;
+				padding-left: 10px;
+			}
+
+				.section_3 .module .list h6 .title {
+					color: #221815;
+					font-size: 16px;
+				}
+
+				.section_3 .module .list h6 .remark {
+					color: #595757;
+				}
+
+			.section_3 .module .list ul {
+				background: #efefef;
+				padding-bottom: 5px;
+				margin-top: 16px;
+				font-size: 14px;
+			}
+
+				.section_3 .module .list ul:after {
+					display: block;
+					clear: both;
+					content: "";
+				}
+
+			.section_3 .module .list li a:link, .section_3 .module .list li a:hover, .section_3 .module .list li a:visited {
+				color: #898989;
+				text-decoration: none;
+			}
+
+			.section_3 .module .list li {
+				float: left;
+				margin-top: 5px;
+				padding: 0 20px;
+				cursor: pointer;
+				border-right: 1px solid #b2b2b3;
+			}
+
+				.section_3 .module .list li:last-child {
+					border: 0;
+				}
+
+	.section_3:after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+
+.section_4 {
+	clear: both;
+	padding-top: 20px;
+}
+
+	.section_4 .title i {
+		float: left;
+		display: inline-block;
+		background: url(/img/wellcome.png) -124px -206px;
+		width: 25px;
+		height: 25px;
+		margin-right: 5px;
+	}
+
+	.section_4 .title span {
+		float: left;
+		font-size: 16px;
+		color: #221815;
+	}
+
+	.section_4 .remark {
+		clear: both;
+		padding-left: 30px;
+		font-size: 14px;
+		color: #595757;
+	}
+
+	.section_4 .btnApply {
+		background: #fd9834;
+		color: #fff;
+		padding: 5px 10px;
+		border-radius: 20px;
+		cursor: pointer;
+	}
+
+.applyform {
+}
+
+	.applyform input {
+		border: 1px solid #ddd;
+		padding: 10px;
+	}
+
+	.applyform textarea {
+		border: 1px solid #ddd;
+		padding: 10px;
+		width:240px;
+		height:140px;
+	}
+	.applyform th{
+		font-weight:normal;
+		padding-right:10px;
+	}
+	.applyform td{
+		padding-bottom:10px;
+	}

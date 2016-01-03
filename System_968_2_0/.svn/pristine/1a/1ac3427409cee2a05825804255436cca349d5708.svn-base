@@ -1,0 +1,127 @@
+﻿using Ac968.SystemModuleSetMeal.Model;
+using Ac968.SystemModuleSetMeal.Utility;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public partial class Master_V2 : System.Web.UI.Page
+{
+    protected V_CompanyModule[] __list;
+    protected SystemModule[] __AllList;
+    protected CompanyFastModule[] __FastModule;
+    protected List<SystemModule> __OpenModule_1 = new List<SystemModule>();
+    protected List<SystemModule> __OpenModule_2 = new List<SystemModule>();
+    protected List<SystemModule> __OpenModule_3 = new List<SystemModule>();
+    protected List<SystemModule> __NotOpenModule_1 = new List<SystemModule>();
+    protected List<SystemModule> __NotOpenModule_2 = new List<SystemModule>();
+    protected List<SystemModule> __NotOpenModule_3 = new List<SystemModule>();
+    protected Service_OEMAgent.PlanAgent __OEMInfo;
+    protected Service_Company.Company __Company = new Service_Company.Company();
+    protected string __companyModuleIds = ",";
+    protected bool __IsCompany= false;
+    protected Service_PublicUser.CompanyManageUser __userInfo;
+    /// <summary>
+    /// 当前登陆企业ID
+    /// </summary>
+    protected long LoginCompanyId
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(System.Configuration.ConfigurationSettings.AppSettings.Get("CompanyId")))
+            {
+                return Convert.ToInt64(System.Configuration.ConfigurationSettings.AppSettings.Get("CompanyId"));
+            }
+            return Convert.ToInt64(CookiesUtil.GetCookiesValue_V2("Camel", "CenterComId"));
+        }
+    }
+    /// <summary>
+    /// 当前登陆企业ID
+    /// </summary>
+    protected long LoginUserId
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(System.Configuration.ConfigurationSettings.AppSettings.Get("UserId")))
+            {
+                return Convert.ToInt64(System.Configuration.ConfigurationSettings.AppSettings.Get("UserId"));
+            }
+            return Convert.ToInt64(CookiesUtil.GetCookiesValue_V2("Camel", "FrameUserId"));
+        }
+    }
+    protected string GetModuleName(int moduleId) {
+        return Enum.GetName(typeof(ModuleType), moduleId);
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Service_CompanyFastModule.CompanyFastModuleClient fastModuleBll = new Service_CompanyFastModule.CompanyFastModuleClient();
+        __FastModule = fastModuleBll.ListByUser(LoginCompanyId, LoginUserId).OrderBy(m => m.ModuleId).ToArray();
+        fastModuleBll.Abort();
+        fastModuleBll.Close();
+        Service_OEMAgent.AgentServiceClient oemBll = new Service_OEMAgent.AgentServiceClient();
+        __OEMInfo = oemBll.AgentGetByComId(LoginCompanyId);
+        Service_SystemModule.SystemModuleClient systemModuleBll = new Service_SystemModule.SystemModuleClient();
+        __AllList = systemModuleBll.ListByCompany(LoginCompanyId, "", LoginUserId).OrderBy(m=>m.OrderBy).ToArray();
+        systemModuleBll.Abort();
+        systemModuleBll.Close();
+        Service_Company.CompanyServiceClient companyBll = new Service_Company.CompanyServiceClient();
+        __Company = companyBll.GetCompany(LoginCompanyId);
+        __IsCompany = companyBll.CompanyValid(LoginCompanyId);
+        companyBll.Abort();
+        companyBll.Close();
+        Service_PublicUser.UserServiceClient puBll = new Service_PublicUser.UserServiceClient();
+        __userInfo = puBll.CompanyManageGet(LoginCompanyId, LoginUserId);
+        puBll.Abort();
+        puBll.Close();
+
+        if (__AllList != null)
+        {
+            foreach (SystemModule item in __AllList)
+            {
+                if (item.State == 3//未购买
+                    || (__userInfo.RoleTypeId != 1 && __userInfo._UserPowerExLst.Where(m => m.ModuleId == item.id).ToArray().Length == 0)//无操作权限
+                        )
+                {
+                    continue;
+                }
+
+                if (item.State == 0)
+                {
+                    switch (item.Type)
+                    {
+                        case 1:
+                            __OpenModule_1.Add(item);
+                            break;
+                        case 2:
+                            __OpenModule_2.Add(item);
+                            break;
+                        case 3:
+                            __OpenModule_3.Add(item);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else if (__userInfo.RoleTypeId == 1)
+                {
+                    switch (item.Type)
+                    {
+                        case 1:
+                            __NotOpenModule_1.Add(item);
+                            break;
+                        case 2:
+                            __NotOpenModule_2.Add(item);
+                            break;
+                        case 3:
+                            __NotOpenModule_3.Add(item);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+        oemBll.Abort();
+        oemBll.Close();
+    }
+
+}

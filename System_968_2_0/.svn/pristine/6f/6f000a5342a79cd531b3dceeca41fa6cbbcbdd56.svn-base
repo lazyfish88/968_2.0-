@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CompanyModuleBLL" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54028/CompanyModule.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54028/CompanyModule.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54028/CompanyModule.svc?xsd=xsd2" namespace="Ac968.SystemModuleSetMeal.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICompanyModule_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:List" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_ListByDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListByDomain" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_ListByDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListByDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_InfoByModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:InfoByModule" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_InfoByModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InfoByModuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_Edit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Edit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_VerifyCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyCheck" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyModule_VerifyCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyCheckResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICompanyModule">
+    <wsdl:operation name="List">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyModule/List" message="tns:ICompanyModule_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyModule/ListResponse" message="tns:ICompanyModule_List_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListByDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyModule/ListByDomain" message="tns:ICompanyModule_ListByDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyModule/ListByDomainResponse" message="tns:ICompanyModule_ListByDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoByModule">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyModule/InfoByModule" message="tns:ICompanyModule_InfoByModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyModule/InfoByModuleResponse" message="tns:ICompanyModule_InfoByModule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyModule/Edit" message="tns:ICompanyModule_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyModule/EditResponse" message="tns:ICompanyModule_Edit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyModule/Delete" message="tns:ICompanyModule_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyModule/DeleteResponse" message="tns:ICompanyModule_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyModule/VerifyCheck" message="tns:ICompanyModule_VerifyCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyModule/VerifyCheckResponse" message="tns:ICompanyModule_VerifyCheck_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICompanyModule" type="tns:ICompanyModule">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="List">
+      <soap:operation soapAction="http://tempuri.org/ICompanyModule/List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListByDomain">
+      <soap:operation soapAction="http://tempuri.org/ICompanyModule/ListByDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoByModule">
+      <soap:operation soapAction="http://tempuri.org/ICompanyModule/InfoByModule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Edit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyModule/Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/ICompanyModule/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyCheck">
+      <soap:operation soapAction="http://tempuri.org/ICompanyModule/VerifyCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompanyModuleBLL">
+    <wsdl:port name="BasicHttpBinding_ICompanyModule" binding="tns:BasicHttpBinding_ICompanyModule">
+      <soap:address location="http://localhost:54028/CompanyModule.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

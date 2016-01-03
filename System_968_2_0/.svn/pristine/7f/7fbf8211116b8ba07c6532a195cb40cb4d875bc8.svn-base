@@ -1,0 +1,991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Camel.ApiModel" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetCompanyCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCompanyCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUpdateBase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUpdateBaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="CompanyUpdateBaseResult" type="q1:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iPageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="iPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="sSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCompanyListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+                </ActualType>
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lCompanyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="GetCompanyResult" nillable="true" type="q2:Company" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyListByIdArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompanyIdArr" nillable="true" type="q3:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyListByIdArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="GetCompanyListByIdArrResult" nillable="true" type="q4:ArrayOfCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="GetCompanyByUserIdResult" nillable="true" type="q5:Company" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUpdateCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="Commission" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUpdateCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyUpdateCommissionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyByDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sDomain" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyByDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="GetCompanyByDomainResult" nillable="true" type="q6:Company" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCompanyResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertAgentCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AgentId" type="xs:int" />
+        <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertAgentCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertAgentCompanyResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyGetByWeiXin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WeiXin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyGetByWeiXinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="CompanyGetByWeiXinResult" nillable="true" type="q7:Company" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyBindWeiXin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="WeiXin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AppId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AppSecret" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyBindWeiXinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="CompanyBindWeiXinResult" type="q8:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyValidResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRecePay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="sOrderId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deMoney" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRecePayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertRecePayResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCash">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="sOrderId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deMoney" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCashResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCashResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitServ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="eShopType" type="q9:ShopType" />
+        <xs:element minOccurs="0" name="lServiceUserId" type="xs:long" />
+        <xs:element minOccurs="0" name="iServiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitServResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitServResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserServ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="eShopType" type="q10:ShopType" />
+        <xs:element minOccurs="0" name="lServiceUserId" type="xs:long" />
+        <xs:element minOccurs="0" name="iServiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserServResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="GetUserServResult" nillable="true" type="q11:ServiceRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserServ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ServiceRole" nillable="true" type="q12:ServiceRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserServResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateUserServResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetServSucc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="eShopType" type="q13:ShopType" />
+        <xs:element minOccurs="0" name="lServiceUserId" type="xs:long" />
+        <xs:element minOccurs="0" name="iServiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetServSuccResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetServSuccResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnServ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="eShopType" type="q14:ShopType" />
+        <xs:element minOccurs="0" name="lServiceUserId" type="xs:long" />
+        <xs:element minOccurs="0" name="iServiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnServResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReturnServResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="eShopType" type="q15:ShopType" />
+        <xs:element minOccurs="0" name="lServiceUserId" type="xs:long" />
+        <xs:element minOccurs="0" name="iServiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="GetServStatusResult" type="q16:ProcType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserServList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="eShopType" type="q17:ShopType" />
+        <xs:element minOccurs="0" name="lServiceUserId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserServListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserServListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+                </ActualType>
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserServValidList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="eShopType" type="q18:ShopType" />
+        <xs:element minOccurs="0" name="lServiceUserId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserServValidListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserServValidListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+                </ActualType>
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAllServList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="eShopType" type="q19:ShopType" />
+        <xs:element minOccurs="0" name="lServiceUserId" type="xs:long" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ProcType" type="q20:ProcType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAllServListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserAllServListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+                </ActualType>
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServTypeList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServTypeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServTypeListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+                </ActualType>
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iPageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="iPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="dtStartTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEndTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="iShopUserType" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="iServiceId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="iServiceFlag" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+                </ActualType>
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServRecCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dtStartTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEndTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="iShopUserType" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="iServiceId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="iServiceFlag" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServRecCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServRecCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iServiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="GetServTypeResult" nillable="true" type="q21:ServType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServTypeUpdateAndSave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ServType" nillable="true" type="q22:ServType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServTypeUpdateAndSaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="ServTypeUpdateAndSaveResult" type="q23:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iPageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="iPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="sSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="SysServListResult" nillable="true" type="q24:ArrayOfServType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServRecCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServRecCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SysServRecCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ServType" nillable="true" type="q25:ServType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="SysServInsertResult" type="q26:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ServType" nillable="true" type="q27:ServType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="SysServUpdateResult" type="q28:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iServiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysServDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="SysServDeleteResult" type="q29:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvSubmit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="MaxMoney" type="xs:decimal" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="IsLimit" type="q30:ValidFlag" />
+        <xs:element minOccurs="0" name="Points" type="xs:int" />
+        <xs:element minOccurs="0" name="ConvMoney" type="xs:decimal" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="TimeFlag" type="q31:ValidFlag" />
+        <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvSubmitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PointsConvSubmitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvGetById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RuleId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvGetByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PointsConvGetByIdResult" nillable="true" type="q32:PointsConvRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PointsConvGetResult" nillable="true" type="q33:PointsConvRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_PointsConvRule" nillable="true" type="q34:PointsConvRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PointsConvUpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvSetValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="RuleId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvSetValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PointsConvSetValidResult" type="q35:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvSetUnValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="RuleId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvSetUnValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PointsConvSetUnValidResult" type="q36:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ProcType" type="q37:ProcType" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ValidFlag" type="q38:ValidFlag" />
+        <xs:element minOccurs="0" name="dtStartTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEndTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="iPageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="iPageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PointsConvGetListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+                </ActualType>
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvGetRecordCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ProcType" type="q39:ProcType" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ValidFlag" type="q40:ValidFlag" />
+        <xs:element minOccurs="0" name="dtStartTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEndTime" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvGetRecordCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PointsConvGetRecordCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvProc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        <xs:element minOccurs="0" name="Points" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvProcResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PointsConvProcResult" type="q41:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvPlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        <xs:element minOccurs="0" name="Points" type="xs:long" />
+        <xs:element minOccurs="0" name="deConvMoney" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PointsConvPlanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PointsConvPlanResult" type="q42:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerSubmit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_UserType" type="q43:UserType" />
+        <xs:element minOccurs="0" name="ReleateId" type="xs:long" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_PowerType" type="q44:PowerType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerSubmitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PowerSubmitResult" type="q45:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_UserType" type="q46:UserType" />
+        <xs:element minOccurs="0" name="ReleateId" type="xs:long" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_PowerType" type="q47:PowerType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PowerGetResult" nillable="true" type="q48:PowerRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerIsValid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_UserType" type="q49:UserType" />
+        <xs:element minOccurs="0" name="ReleateId" type="xs:long" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_PowerType" type="q50:PowerType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerIsValidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PowerIsValidResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerGetById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PowerRoleId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerGetByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PowerGetByIdResult" nillable="true" type="q51:PowerRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerProcById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PowerRoleId" type="xs:long" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ProcType" type="q52:ProcType" />
+        <xs:element minOccurs="0" name="ServContent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerProcByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PowerProcByIdResult" type="q53:SqlStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iPageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="iPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="dtStartTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEndTime" nillable="true" type="xs:dateTime" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_UserType" type="q54:UserType" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_PowerType" type="q55:PowerType" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ProcType" type="q56:ProcType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PowerGetListResult" nillable="true" type="q57:ArrayOfPowerRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerGetRecCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dtStartTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtEndTime" nillable="true" type="xs:dateTime" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_UserType" type="q58:UserType" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_PowerType" type="q59:PowerType" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="_ProcType" type="q60:ProcType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PowerGetRecCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PowerGetRecCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComanyAdminGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComanyAdminGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="ComanyAdminGetResult" nillable="true" type="q61:ArrayOfPlan_Admin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlanUrlGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iPageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="iPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="UrlTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="sSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlanUrlGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PlanUrlGetListResult" nillable="true" type="q62:ArrayOfPlan_Url" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlanUrlGetRec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UrlTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="sSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlanUrlGetRecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PlanUrlGetRecResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlanUrlTypeGetList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlanUrlTypeGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="PlanUrlTypeGetListResult" nillable="true" type="q63:ArrayOfPlan_UrlType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComNewsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iPageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="iPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="sSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComNewsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Camel.ApiModel" minOccurs="0" name="ComNewsListResult" nillable="true" type="q64:ArrayOfComNews" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComNewsRecCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="sSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComNewsRecCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ComNewsRecCountResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

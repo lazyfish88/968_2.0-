@@ -1,0 +1,32 @@
+﻿using Ac968.SystemModuleSetMeal.Model;
+using Ac968.SystemModuleSetMeal.Utility;
+using Ac968.SystemModuleSetMeal.Utility.Alipay;
+using System;
+
+
+public partial class SystemModule_GoPay : SetMealPageBase
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Service_PlanAgentOrder.PlanAgentOrderClient bll = new Service_PlanAgentOrder.PlanAgentOrderClient();
+        PlanAgentOrder info = bll.Info(0, GetRequest.GetRequestValue("sn"));
+        bll.Abort();
+        bll.Close();
+
+        Service_SystemModuleSetMeal.SystemModuleSetMealClient setMealBll = new Service_SystemModuleSetMeal.SystemModuleSetMealClient();
+        string[] setMealIdArr = info.RelationId.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+        string names = "";
+        foreach (string idItem in setMealIdArr)
+        {
+            SystemModuleSetMeal setMealInfo = setMealBll.Info(Convert.ToInt32(idItem));
+            names += setMealInfo.Name + "，";
+        }
+        //info.Price = 0.01m;
+        PayForm pf = new PayForm();
+        pf.out_trade_no = info.Sn;//订单号
+        pf.total_fee = info.Price.ToString();//充值多少
+        pf.subject = "开通套餐：" + names.Trim(',');//备注
+        pf.body = names.Trim(',');//标题
+        pf.GoPay("1");
+    }
+}

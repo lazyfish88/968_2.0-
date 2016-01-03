@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6cb43246-e381-4dc1-beb8-849d9e654137" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54028/CompanyFastModule.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CompanyFastModule.disco" MetadataType="Disco" ID="c0651ed3-7a49-4144-b044-0e7714768653" SourceId="1" SourceUrl="http://localhost:54028/CompanyFastModule.svc?disco" />
+    <MetadataFile FileName="CompanyFastModule.xsd" MetadataType="Schema" ID="26cf0f7b-4ef1-4479-b54f-d54c7dc87705" SourceId="1" SourceUrl="http://localhost:54028/CompanyFastModule.svc?xsd=xsd2" />
+    <MetadataFile FileName="CompanyFastModule1.xsd" MetadataType="Schema" ID="c056afca-d2ea-4d40-b0bd-840c8d75dd98" SourceId="1" SourceUrl="http://localhost:54028/CompanyFastModule.svc?xsd=xsd0" />
+    <MetadataFile FileName="CompanyFastModule2.xsd" MetadataType="Schema" ID="e0e0c793-db97-49ed-9d6e-01d152ce7bd8" SourceId="1" SourceUrl="http://localhost:54028/CompanyFastModule.svc?xsd=xsd1" />
+    <MetadataFile FileName="CompanyFastModuleBLL.wsdl" MetadataType="Wsdl" ID="09d706a9-1da1-45ac-a985-1a7079c0cde1" SourceId="1" SourceUrl="http://localhost:54028/CompanyFastModule.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3d1f94a6-3f33-41f0-a631-574a9a523408" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54028/PlanAgentLevel.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PlanAgentLevel.xsd" MetadataType="Schema" ID="6213241a-af40-4843-b361-bc6eb932b2e6" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentLevel.svc?xsd=xsd2" />
+    <MetadataFile FileName="PlanAgentLevel1.xsd" MetadataType="Schema" ID="767c5787-8a46-4776-9c27-16dce3486295" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentLevel.svc?xsd=xsd1" />
+    <MetadataFile FileName="PlanAgentLevelBLL.wsdl" MetadataType="Wsdl" ID="c82e7101-71b6-4ad5-bccc-afe0e85d34a8" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentLevel.svc?wsdl" />
+    <MetadataFile FileName="PlanAgentLevel2.xsd" MetadataType="Schema" ID="af25ca86-aa47-4c60-8c8f-be5d4bfd76e4" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentLevel.svc?xsd=xsd0" />
+    <MetadataFile FileName="PlanAgentLevel.disco" MetadataType="Disco" ID="4f0592ee-8fa3-4a45-91b4-236cc133140e" SourceId="1" SourceUrl="http://localhost:54028/PlanAgentLevel.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

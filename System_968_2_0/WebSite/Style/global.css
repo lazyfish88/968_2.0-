@@ -1,0 +1,38 @@
+﻿
+.Pager {
+	padding-top: 10px;
+	height: 30px;
+}
+
+	.Pager li {
+		cursor: pointer;
+		float: left;
+		border: 1px solid #DEDEDF;
+		color: #333;
+		font-size: 12px;
+		margin-left: 5px;
+		padding: 0 10px;
+		line-height: 20px;
+		text-align: center;
+	}
+
+		.Pager li:hover, .Pager li.active {
+			border: 1px solid #FD9834;
+			background: #FD9834;
+			color: #fff;
+		}
+
+		.Pager li.pageInput:hover {
+			border: 1px solid #DEDEDF;
+			background: #fff;
+		}
+
+		.Pager li.pageInput {
+			padding: 0;
+		}
+
+			.Pager li.pageInput input {
+				border: 0;
+				width: 40px;
+				text-align: center;
+			}

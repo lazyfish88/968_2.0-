@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Ac968.SystemModuleSetMeal.Model" elementFormDefault="qualified" targetNamespace="Ac968.SystemModuleSetMeal.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCustomApply">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomApply" nillable="true" type="tns:CustomApply" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomApply" nillable="true" type="tns:ArrayOfCustomApply" />
+  <xs:complexType name="CustomApply">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomApply" nillable="true" type="tns:CustomApply" />
+</xs:schema>

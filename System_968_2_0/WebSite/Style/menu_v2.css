@@ -1,0 +1,341 @@
+﻿body {
+	padding: 0;
+	margin: 0;
+	font-family: "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, STHeiti, sans-serif;
+}
+
+ul, li, h4, h5 {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+}
+
+#Body {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.BodyLeft {
+	width: 220px;
+	float: left;
+	background: #efefef;
+	position: relative;
+}
+
+	.BodyLeft .LogoBox {
+		background: #fd9834 no-repeat center;
+		height: 141px;
+		padding-bottom: 15px;
+		text-align: center;
+	}
+
+		.BodyLeft .LogoBox .btn {
+			width: 110px;
+			background: #efefef;
+			text-align: center;
+			padding: 10px;
+			border-radius: 15px;
+			margin: 0 auto;
+		}
+
+	.BodyLeft .MenuBox {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		top: 156px;
+	}
+
+	.BodyLeft .Level_1 {
+		background: #2a3541;
+		float: left;
+	}
+
+		.BodyLeft .Level_1 .item {
+			padding: 22px;
+			cursor: pointer;
+		}
+
+			.BodyLeft .Level_1 .item:hover, .BodyLeft .Level_1 .item.active {
+				background: #151a21;
+			}
+
+			.BodyLeft .Level_1 .item span {
+				background: url(/img/icon_v2.png);
+				display: block;
+				width: 33px;
+				height: 33px;
+			}
+
+		.BodyLeft .Level_1 .menu_1 span {
+			background-position: -23px -180px;
+		}
+
+		.BodyLeft .Level_1 .menu_2 span {
+			background-position: -23px -219px;
+		}
+
+		.BodyLeft .Level_1 .menu_3 span {
+			background-position: -23px -257px;
+		}
+
+		.BodyLeft .Level_1 .menu_4 span {
+			background-position: -23px -294px;
+		}
+
+		.BodyLeft .Level_1 .menu_5 span {
+			background-position: -23px -339px;
+		}
+
+		.BodyLeft .Level_1 .menu_1.active span {
+			background-position: -65px -180px;
+		}
+
+		.BodyLeft .Level_1 .menu_2.active span {
+			background-position: -65px -219px;
+		}
+
+		.BodyLeft .Level_1 .menu_3.active span {
+			background-position: -65px -257px;
+		}
+
+		.BodyLeft .Level_1 .menu_4.active span {
+			background-position: -65px -294px;
+		}
+
+		.BodyLeft .Level_1 .menu_5.active span {
+			background-position: -65px -339px;
+		}
+
+	.BodyLeft .Level_2_Box {
+		float: left;
+		background: #efefef;
+		display: none;
+		width: 143px;
+		overflow-y: auto;
+	}
+
+		.BodyLeft .Level_2_Box h4 {
+			line-height: 43px;
+			font-size: 16px;
+			padding-left: 10px;
+			display: block;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.BodyLeft .Level_2_Box .OpenMenu {
+		}
+
+			.BodyLeft .Level_2_Box .OpenMenu li {
+				margin: 14px;
+				display: block;
+				margin-bottom: 0;
+				background: #fff;
+				border: 1px solid #ddd;
+				line-height: 30px;
+				width: 80px;
+				padding: 0 10px;
+				border-radius: 15px;
+				cursor: pointer;
+				text-align: center;
+			}
+
+				.BodyLeft .Level_2_Box .OpenMenu li a:link,
+				.BodyLeft .Level_2_Box .OpenMenu li a:hover,
+				.BodyLeft .Level_2_Box .OpenMenu li a:visited {
+					display: block;
+					text-decoration: none;
+					color: #333;
+				}
+
+		.BodyLeft .Level_2_Box .NotOpenMenu h5 {
+			color: #fd9834;
+			line-height: 43px;
+			font-size: 16px;
+			padding-left: 10px;
+			display: block;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.BodyLeft .Level_2_Box .NotOpenMenu li {
+			cursor: pointer;
+			margin: 14px;
+			display: block;
+			margin-bottom: 0;
+			background: #ddd;
+			border: 1px solid #ddd;
+			line-height: 30px;
+			width: 80px;
+			padding: 0 10px;
+			border-radius: 15px;
+			text-align: center;
+		}
+
+
+.BodyMain {
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: 220px;
+}
+
+	.BodyMain .tool {
+		background: #efefef;
+		height: 30px;
+		padding: 0 10px;
+		padding-top: 5px;
+	}
+
+		.BodyMain .tool .name {
+			float: left;
+		}
+
+		.BodyMain .tool .button {
+			float: right;
+		}
+
+			.BodyMain .tool .button a:link, .BodyMain .tool .button a:hover, .BodyMain .tool .button a:visited {
+				color: #333;
+				text-decoration: none;
+				float: left;
+				line-height: 25px;
+				margin-left: 10px;
+				font-size: 14px;
+			}
+
+			.BodyMain .tool .button a i {
+				display: inline-block;
+				background: url(/img/icon_v2.png);
+				width: 25px;
+				height: 25px;
+				float: left;
+			}
+
+			.BodyMain .tool .button a.guide i {
+				background-position: -28px -70px;
+			}
+
+			.BodyMain .tool .button a.check i {
+				background-position: -89px -41px;
+			}
+
+			.BodyMain .tool .button a.change i {
+				background-position: -117px -41px;
+			}
+
+			.BodyMain .tool .button a.home i {
+				background-position: -27px -12px;
+			}
+
+			.BodyMain .tool .button a.qr i {
+				background-position: -60px -12px;
+			}
+
+			.BodyMain .tool .button a.pwd i {
+				background-position: -89px -12px;
+			}
+
+			.BodyMain .tool .button a.logout i {
+				background-position: -111px -12px;
+			}
+
+			.BodyMain .tool .button a.module_pay i {
+				background-position: -30px -39px;
+			}
+
+#FastTitle {
+	border-bottom: 1px solid #ddd;
+}
+
+	#FastTitle:after {
+		clear: both;
+		display: block;
+		content: "";
+	}
+
+	#FastTitle .title {
+		float: left;
+	}
+
+	#FastTitle .setting {
+		background: url(/img/icon_v2.png) no-repeat -61px -42px;
+		display: block;
+		float: right;
+		width: 20px;
+		margin-top: 10px;
+		margin-right: 5px;
+		height: 20px;
+		cursor: pointer;
+	}
+
+.FastMenu {
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+	.FastMenu .moduletitle {
+		margin-top: 15px;
+	}
+
+	.FastMenu li {
+		cursor: pointer;
+	}
+
+	.FastMenu .moduletitle i {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background: url(/img/icon_v2.png);
+		margin-right: 5px;
+	}
+
+	.FastMenu .moduletitle.open i {
+		background-position: 0 -66px;
+	}
+
+	.FastMenu .moduletitle.close i {
+		background-position: 0 -49px;
+	}
+
+	.FastMenu a:link, .FastMenu a:visited, .FastMenu a:hover {
+		color: #333;
+		text-decoration: none;
+	}
+
+	.FastMenu .item a:link, .FastMenu .item a:visited, .FastMenu .item a:hover {
+		color: #666;
+	}
+
+	.FastMenu .item {
+		margin-left: 15px;
+		padding-left: 5px;
+		border-left: 2px solid #fd9834;
+		margin-top: 10px;
+		line-height: 17px;
+	}
+
+.Level_2_Box li.active {
+	color: #fd9834;
+	border-color: #fd9834;
+}
+
+.Level_2_Box .OpenMenu li.active a:link, .Level_2_Box .OpenMenu li.active a:visited, .Level_2_Box .OpenMenu li.active a:hover {
+	color: #fd9834;
+}
+
+.msg {
+	position: relative;
+}
+
+	.msg i {
+		display: block;
+		background: url(/img/icon_v2.png) 0 -81px;
+		position: absolute;
+		width: 16px;
+		height: 19px;
+		left: 69px;
+		top: 0px;
+	}

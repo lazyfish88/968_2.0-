@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Camel.ApiModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Camel.ApiModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Camel.ORM" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="SqlStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Exist" />
+      <xs:enumeration value="Succ" />
+      <xs:enumeration value="Falt" />
+      <xs:enumeration value="NoExist" />
+      <xs:enumeration value="NoUser" />
+      <xs:enumeration value="NoCompany" />
+      <xs:enumeration value="NoEnoughPoints" />
+      <xs:enumeration value="NoEnoughMoney" />
+      <xs:enumeration value="NoRule" />
+      <xs:enumeration value="TimeOut" />
+      <xs:enumeration value="IsNegative" />
+      <xs:enumeration value="AlreaProc" />
+      <xs:enumeration value="ValueEmpty" />
+      <xs:enumeration value="BankCodeExist" />
+      <xs:enumeration value="NoExistType" />
+      <xs:enumeration value="NoAgent" />
+      <xs:enumeration value="NoAllow" />
+      <xs:enumeration value="InProc" />
+      <xs:enumeration value="PointsLessThanRule" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SqlStatus" nillable="true" type="tns:SqlStatus" />
+  <xs:simpleType name="ProcType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No" />
+      <xs:enumeration value="Succ" />
+      <xs:enumeration value="Submit" />
+      <xs:enumeration value="Return" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProcType" nillable="true" type="tns:ProcType" />
+  <xs:complexType name="Company">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Camel.ORM" base="q1:DataEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AgentId" type="xs:int" />
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AppId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AppSecret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AuthFlag" type="xs:int" />
+          <xs:element minOccurs="0" name="AuthTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Commission" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+          <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdCard" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KeepScore" type="xs:int" />
+          <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PointsMoney" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RegTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ShareScore" type="xs:int" />
+          <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnUseAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="WeiXin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZhanScore" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="ArrayOfCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompany" nillable="true" type="tns:ArrayOfCompany" />
+  <xs:simpleType name="ShopType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No" />
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="Agent" />
+      <xs:enumeration value="Person" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ShopType" nillable="true" type="tns:ShopType" />
+  <xs:complexType name="ServiceRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="ServiceContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceId" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ServiceUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="ShopUserType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceRole" nillable="true" type="tns:ServiceRole" />
+  <xs:complexType name="ServType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Camel.ORM" base="q2:DataEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceDescriptor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceIcon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceId" type="xs:int" />
+          <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServType" nillable="true" type="tns:ServType" />
+  <xs:complexType name="ArrayOfServType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServType" nillable="true" type="tns:ServType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServType" nillable="true" type="tns:ArrayOfServType" />
+  <xs:simpleType name="ValidFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No" />
+      <xs:enumeration value="Yes" />
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ValidFlag" nillable="true" type="tns:ValidFlag" />
+  <xs:complexType name="PointsConvRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="AuthTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CompanyId" type="xs:long" />
+      <xs:element minOccurs="0" name="ConvMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsLimit" type="xs:int" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:int" />
+      <xs:element minOccurs="0" name="LeaveMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Points" type="xs:int" />
+      <xs:element minOccurs="0" name="RuleId" type="xs:long" />
+      <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeFlag" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PointsConvRule" nillable="true" type="tns:PointsConvRule" />
+  <xs:simpleType name="UserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="Person" />
+      <xs:enumeration value="Plan" />
+      <xs:enumeration value="Media" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserType" nillable="true" type="tns:UserType" />
+  <xs:simpleType name="PowerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="DisMall" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PowerType" nillable="true" type="tns:PowerType" />
+  <xs:complexType name="PowerRole">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Camel.ORM" base="q3:DataEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PowerRoleId" type="xs:long" />
+          <xs:element minOccurs="0" name="PowerTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="PowerTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProcType" type="xs:int" />
+          <xs:element minOccurs="0" name="ReleateId" type="xs:long" />
+          <xs:element minOccurs="0" name="ServContent" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserType" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PowerRole" nillable="true" type="tns:PowerRole" />
+  <xs:complexType name="ArrayOfPowerRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PowerRole" nillable="true" type="tns:PowerRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPowerRole" nillable="true" type="tns:ArrayOfPowerRole" />
+  <xs:complexType name="ArrayOfPlan_Admin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Plan_Admin" nillable="true" type="tns:Plan_Admin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlan_Admin" nillable="true" type="tns:ArrayOfPlan_Admin" />
+  <xs:complexType name="Plan_Admin">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Camel.ORM" base="q4:DataEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdminId" type="xs:long" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+          <xs:element minOccurs="0" name="DCardComId" type="xs:int" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PowerRole" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrueName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserPass" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Plan_Admin" nillable="true" type="tns:Plan_Admin" />
+  <xs:complexType name="ArrayOfPlan_Url">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Plan_Url" nillable="true" type="tns:Plan_Url" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlan_Url" nillable="true" type="tns:ArrayOfPlan_Url" />
+  <xs:complexType name="Plan_Url">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Camel.ORM" base="q5:DataEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Summary" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UrlId" type="xs:long" />
+          <xs:element minOccurs="0" name="UrlTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="UrlTypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Plan_Url" nillable="true" type="tns:Plan_Url" />
+  <xs:complexType name="ArrayOfPlan_UrlType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Plan_UrlType" nillable="true" type="tns:Plan_UrlType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlan_UrlType" nillable="true" type="tns:ArrayOfPlan_UrlType" />
+  <xs:complexType name="Plan_UrlType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Camel.ORM" base="q6:DataEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UrlTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="UrlTypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Plan_UrlType" nillable="true" type="tns:Plan_UrlType" />
+  <xs:complexType name="ArrayOfComNews">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComNews" nillable="true" type="tns:ComNews" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComNews" nillable="true" type="tns:ArrayOfComNews" />
+  <xs:complexType name="ComNews">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Camel.ORM" base="q7:DataEntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Info" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SmallInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComNews" nillable="true" type="tns:ComNews" />
+  <xs:simpleType name="SrcType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Mall" />
+      <xs:enumeration value="Card" />
+      <xs:enumeration value="Wap" />
+      <xs:enumeration value="Media" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SrcType" nillable="true" type="tns:SrcType" />
+  <xs:simpleType name="TimeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Min" />
+      <xs:enumeration value="Hour" />
+      <xs:enumeration value="Day" />
+      <xs:enumeration value="Month" />
+      <xs:enumeration value="Year" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TimeType" nillable="true" type="tns:TimeType" />
+  <xs:simpleType name="CountCalcType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Pv" />
+      <xs:enumeration value="Uv" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CountCalcType" nillable="true" type="tns:CountCalcType" />
+  <xs:complexType name="ArrayOfPlanCountTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlanCountTime" nillable="true" type="tns:PlanCountTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlanCountTime" nillable="true" type="tns:ArrayOfPlanCountTime" />
+  <xs:complexType name="PlanCountTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dtEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dtStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="iPvVistCounts" type="xs:int" />
+      <xs:element minOccurs="0" name="iUvVistCounts" type="xs:int" />
+      <xs:element minOccurs="0" name="sTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanCountTime" nillable="true" type="tns:PlanCountTime" />
+  <xs:simpleType name="CalcSpeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Area" />
+      <xs:enumeration value="Os" />
+      <xs:enumeration value="App" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CalcSpeType" nillable="true" type="tns:CalcSpeType" />
+</xs:schema>

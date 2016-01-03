@@ -1,0 +1,21 @@
+﻿using Ac968.SystemModuleSetMeal.Model;
+using System.Collections.Generic;
+using System.ServiceModel;
+
+namespace Ac968.SystemModuleSetMeal.Interface
+{
+    [ServiceContract]
+    public interface ICompanyFastModule
+    {
+        [OperationContract]
+        List<CompanyFastModule> List(long companyId);
+        [OperationContract]
+        CompanyFastModule Edit(CompanyFastModule model);
+        [OperationContract]
+        void BatchAdd(long companyId,string moduleIds,string urls,string names);
+        [OperationContract]
+        void Del(long id);
+        [OperationContract]
+        CompanyFastModule Info(long id);
+    }
+}

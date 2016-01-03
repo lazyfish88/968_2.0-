@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="898fc7d0-c2de-45ba-b3c5-08589fad2260" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54028/SystemModuleSetMealDetail.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SystemModuleSetMealDetailBLL.wsdl" MetadataType="Wsdl" ID="58c7d139-c617-4ea3-821e-9204761bfbdb" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealDetail.svc?wsdl" />
+    <MetadataFile FileName="SystemModuleSetMealDetail.xsd" MetadataType="Schema" ID="a96ffbdf-a386-47ce-9c42-7df3dce731ea" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealDetail.svc?xsd=xsd1" />
+    <MetadataFile FileName="SystemModuleSetMealDetail.disco" MetadataType="Disco" ID="17be719a-547d-4b24-8fba-af24346709c7" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealDetail.svc?disco" />
+    <MetadataFile FileName="SystemModuleSetMealDetail1.xsd" MetadataType="Schema" ID="70592a19-0831-426a-bd9c-c9b78441972d" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealDetail.svc?xsd=xsd2" />
+    <MetadataFile FileName="SystemModuleSetMealDetail2.xsd" MetadataType="Schema" ID="d1ae258d-516a-4225-ae87-ffe6bac72629" SourceId="1" SourceUrl="http://localhost:54028/SystemModuleSetMealDetail.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
